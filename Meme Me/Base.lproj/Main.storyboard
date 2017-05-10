@@ -155,7 +155,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="organize" id="5pT-vL-MSZ">
                                             <connections>
-                                                <segue destination="tA4-gp-CoL" kind="show" id="y5U-0B-05o"/>
+                                                <segue destination="9eE-nN-aJc" kind="show" id="gyw-2g-DJw"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -271,7 +271,4 @@
         <image name="collection_30x30" width="30" height="30"/>
         <image name="table_30x30" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="hS5-js-hMH"/>
-    </inferredMetricsTieBreakers>
 </document>
