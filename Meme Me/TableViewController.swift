@@ -13,11 +13,15 @@ class TableViewController: UITableViewController {
     var memes: [Meme] {
         return (UIApplication.shared.delegate as! AppDelegate).memes
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView!.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
