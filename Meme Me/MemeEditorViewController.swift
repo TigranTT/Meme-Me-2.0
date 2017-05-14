@@ -9,6 +9,8 @@
 import UIKit
 
 class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var memeForDetailView: Meme!
 
     @IBOutlet weak var imageView: UIImageView!
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -77,6 +79,10 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if let memeForDetail = memeForDetailView as Meme! {
+            imageView.image = memeForDetail.originalImage
+        }
         
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
@@ -174,7 +180,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
             if successful{
                 self.save()
                 self.dismiss(animated: true, completion: nil)
-                //self.performSegue(withIdentifier: "tableViewSegue", sender: nil)
+                self.performSegue(withIdentifier: "tableViewSegue", sender: nil)
             }
         }
         present(activityView, animated: true, completion: nil)

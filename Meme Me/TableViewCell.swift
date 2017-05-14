@@ -16,10 +16,12 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var tableBottomLable: UILabel!
     
     
+    /*
     func pushCell(_ meme: Meme) {
         tableImage.image = meme.memedImage
         tableTopLabel.text = meme.topText! as String
         tableBottomLable.text = meme.bottomText! as String
     }
+    */
 
 }

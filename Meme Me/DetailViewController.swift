@@ -18,9 +18,16 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailImage.image = meme.memedImage
+        //detailImage.image = meme.memedImage
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        detailImage.image = meme.memedImage
+        self.tabBarController?.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +35,11 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func detailEditButton(_ sender: Any) {
+        let memeEdit = storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
+        memeEdit.memeForDetailView = self.meme
+        self.navigationController?.pushViewController(memeEdit, animated: true)
+    }
 
     /*
     // MARK: - Navigation
