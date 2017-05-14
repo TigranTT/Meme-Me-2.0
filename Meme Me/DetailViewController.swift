@@ -18,6 +18,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBarController?.tabBar.isHidden = true
+        
         //detailImage.image = meme.memedImage
 
         // Do any additional setup after loading the view.
@@ -37,7 +39,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func detailEditButton(_ sender: Any) {
         let memeEdit = storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
-        memeEdit.memeForDetailView = self.meme
+        memeEdit.memeForDetailView = meme
         self.navigationController?.pushViewController(memeEdit, animated: true)
     }
 

@@ -84,6 +84,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
             imageView.image = memeForDetail.originalImage
         }
         
+        
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
     }

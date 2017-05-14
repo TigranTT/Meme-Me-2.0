@@ -46,6 +46,10 @@ class TableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return memes.count
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
