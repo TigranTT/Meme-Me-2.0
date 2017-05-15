@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailImage: UIImageView!
     
     var meme: Meme!
+    var memeIndex: Int?
     
 
     override func viewDidLoad() {
@@ -39,10 +40,18 @@ class DetailViewController: UIViewController {
     
     @IBAction func detailEditButton(_ sender: Any) {
         let memeEdit = storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
-        memeEdit.memeForDetailView = meme
+        memeEdit.memeEdit = meme
         self.navigationController?.pushViewController(memeEdit, animated: true)
     }
 
+    @IBAction func deleteButton(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if let _ = memeIndex{
+            appDelegate.memes.remove(at: memeIndex!)
+            navigationController?.popViewController(animated: true)
+        }
+    }
+ 
     /*
     // MARK: - Navigation
 

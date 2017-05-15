@@ -10,7 +10,7 @@ import UIKit
 
 class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var memeForDetailView: Meme!
+    var memeEdit: Meme!
 
     @IBOutlet weak var imageView: UIImageView!
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -77,13 +77,18 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     // Sign up to be notified when the keyboard appears
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let memeForDetail = memeForDetailView as Meme! {
+        if let memeForDetail = memeEdit as Meme! {
             imageView.image = memeForDetail.originalImage
         }
-        
         
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
@@ -189,4 +194,5 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
 
 }
+
 

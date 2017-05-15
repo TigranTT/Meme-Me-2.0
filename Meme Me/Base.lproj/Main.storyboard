@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-2383" y="-236"/>
         </scene>
-        <!--Table View-->
+        <!--Sent Memes-->
         <scene sceneID="TII-xw-rGn">
             <objects>
                 <tableViewController id="tA4-gp-CoL" customClass="TableViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
@@ -76,7 +76,7 @@
                             <outlet property="delegate" destination="tA4-gp-CoL" id="v2p-PR-kRN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Table View" id="51h-Oi-WNK">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="51h-Oi-WNK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6yL-hK-bu3">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="cTm-Xu-QXF"/>
@@ -226,11 +226,11 @@
             </objects>
             <point key="canvasLocation" x="-1590" y="-585"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="2tW-HR-3zb">
             <objects>
                 <collectionViewController id="DLT-Dx-lgc" customClass="CollectionViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="l9n-7y-Ihw">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="l9n-7y-Ihw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -269,7 +269,7 @@
                             <outlet property="delegate" destination="DLT-Dx-lgc" id="o4R-VV-EOt"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="kbm-Yd-8DS">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="kbm-Yd-8DS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QHh-Qx-wo3">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="SAd-1G-813"/>
@@ -309,9 +309,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="MEME ME v2.0" id="WEl-qJ-CSJ">
-                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="5pT-vL-MSZ">
+                                        <barButtonItem key="leftBarButtonItem" title="Edit" id="5pT-vL-MSZ">
                                             <connections>
                                                 <action selector="detailEditButton:" destination="OPt-wh-272" id="yrt-Ta-lXg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="dTY-Ml-BpE">
+                                            <connections>
+                                                <action selector="deleteButton:" destination="OPt-wh-272" id="dEn-zT-sEm"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

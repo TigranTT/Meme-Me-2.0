@@ -10,18 +10,20 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    var memes: [Meme] {
-        return (UIApplication.shared.delegate as! AppDelegate).memes
-    }
+    var memes: [Meme]!
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        memes = appDelegate.memes
         tableView.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        memes = appDelegate.memes
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -68,6 +70,7 @@ class TableViewController: UITableViewController {
         
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailController.meme = memes[(indexPath as NSIndexPath).row]
+        detailController.memeIndex = indexPath.row
         self.navigationController!.pushViewController(detailController, animated: true)
     }
  
@@ -80,17 +83,17 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            memes.remove(at: indexPath.row)
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
+        } //else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        //}
     }
-    */
 
     /*
     // Override to support rearranging the table view.
