@@ -19,7 +19,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        detailImage.image = meme.memedImage
         tabBarController?.tabBar.isHidden = true
+        navigationController?.isNavigationBarHidden = true
        
     }
     
@@ -27,7 +29,6 @@ class DetailViewController: UIViewController {
         super.viewDidAppear(animated)
         
         detailImage.image = meme.memedImage
-        tabBarController?.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +46,8 @@ class DetailViewController: UIViewController {
         if let _ = memeIndex{
             appDelegate.memes.remove(at: memeIndex!)
             navigationController?.popViewController(animated: true)
+            tabBarController?.tabBar.isHidden = false
+            navigationController?.isNavigationBarHidden = false
         }
     }
 
