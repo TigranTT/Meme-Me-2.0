@@ -56,7 +56,7 @@ class TableViewController: UITableViewController {
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailController.meme = memes[(indexPath as NSIndexPath).row]
         detailController.memeIndex = indexPath.row
-        self.navigationController!.pushViewController(detailController, animated: true)
+        navigationController!.pushViewController(detailController, animated: true)
     }
 
     
@@ -64,7 +64,6 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             memes.remove(at: indexPath.row)
-            // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }

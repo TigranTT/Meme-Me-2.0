@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
         super.viewDidAppear(animated)
         
         detailImage.image = meme.memedImage
-        self.tabBarController?.tabBar.isHidden = true
+        tabBarController?.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
     @IBAction func detailEditButton(_ sender: Any) {
         let memeEdit = storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
         memeEdit.memeEdit = meme
-        self.navigationController?.pushViewController(memeEdit, animated: true)
+        navigationController?.pushViewController(memeEdit, animated: true)
     }
 
     @IBAction func deleteButton(_ sender: Any) {
