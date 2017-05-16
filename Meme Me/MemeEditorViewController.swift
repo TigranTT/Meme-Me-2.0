@@ -188,7 +188,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
             if successful{
                 self.save()
                 self.dismiss(animated: true, completion: nil)
-                //performSegue(withIdentifier: "tableViewSegue", sender: nil)
+                self.performSegue(withIdentifier: "tableViewSegue", sender: nil)
             }
         }
         present(activityView, animated: true, completion: nil)
