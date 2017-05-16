@@ -30,9 +30,11 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         present(pickerController, animated: true, completion: nil)
     }
     
+    
     @IBAction func camera(_ sender: Any) {
         presentImagePickerWith(sourceType: .camera)
     }
+    
 
     @IBAction func addImage(_ sender: Any) {
         presentImagePickerWith(sourceType: .photoLibrary)
@@ -186,14 +188,14 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
             if successful{
                 self.save()
                 self.dismiss(animated: true, completion: nil)
-                //self.performSegue(withIdentifier: "tableViewSegue", sender: nil)
+                //performSegue(withIdentifier: "tableViewSegue", sender: nil)
             }
         }
         present(activityView, animated: true, completion: nil)
     }
     
     @IBAction func cancelButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "tableViewSegue", sender: nil)
+        performSegue(withIdentifier: "tableViewSegue", sender: nil)
     }
 
 }
