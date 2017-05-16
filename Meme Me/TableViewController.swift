@@ -10,20 +10,17 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    var memes: [Meme]!
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var memes = [Meme]()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        memes = appDelegate.memes
+        memes = (UIApplication.shared.delegate as! AppDelegate).memes
         tableView.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        memes = appDelegate.memes
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +62,7 @@ class TableViewController: UITableViewController {
         if editingStyle == .delete {
             memes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            (UIApplication.shared.delegate as! AppDelegate).memes = memes
         }
     }
 

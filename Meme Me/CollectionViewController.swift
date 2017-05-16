@@ -12,7 +12,7 @@ private let reuseIdentifier = "CollectionViewCell"
 
 class CollectionViewController: UICollectionViewController {
     
-    var memes: [Meme]!
+    var memes = [Meme]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +27,7 @@ class CollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        memes = appDelegate.memes
-        
+        memes = (UIApplication.shared.delegate as! AppDelegate).memes
         collectionView?.reloadData()
     }
 
