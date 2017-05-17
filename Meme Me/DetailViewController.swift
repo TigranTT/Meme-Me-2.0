@@ -31,9 +31,6 @@ class DetailViewController: UIViewController {
         detailImage.image = meme.memedImage
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     @IBAction func detailEditButton(_ sender: Any) {
         let memeEdit = storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController

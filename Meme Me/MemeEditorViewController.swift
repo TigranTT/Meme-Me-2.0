@@ -79,17 +79,15 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     // Sign up to be notified when the keyboard appears
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if let memeForDetail = memeEdit as Meme! {
             imageView.image = memeForDetail.originalImage
+            top.text = memeForDetail.topText! as String
+            bottom.text = memeForDetail.bottomText! as String
+            bottom.isHidden = false
+            top.isHidden = false
         }
         
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
